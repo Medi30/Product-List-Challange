@@ -36,7 +36,7 @@ function parsing (){
 
         cardDiv.appendChild(cardButton).classList.add("btn", "costum-btn", "btn-primary")
         var cartIMG = document.createElement("img")
-        cartIMG.src = "./assets/images/icon-add-to-cart.svg"
+        cartIMG.src = "assets/images/icon-add-to-cart.svg"
         var buttontext = document.createTextNode("Add to Cart")
         cardButton.appendChild(cartIMG)
         cardButton.appendChild(buttontext)
@@ -50,8 +50,8 @@ function parsing (){
         let plusIcon = document.createElement("img")
         let minusIcon = document.createElement("img")
         let buttontext2 = document.createTextNode("1")
-        plusIcon.src = "./assets/images/icon-increment-quantity.svg"
-        minusIcon.src = "./assets/images/icon-decrement-quantity.svg"
+        plusIcon.src = "assets/images/icon-increment-quantity.svg"
+        minusIcon.src = "assets/images/icon-decrement-quantity.svg"
         cardButton2Div.appendChild(minusIcon)
         cardButton2Div.appendChild(buttontext2)
         cardButton2Div.appendChild(plusIcon)
