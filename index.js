@@ -1,4 +1,4 @@
-import menuItems from "./data.json" with {type: "json"};
+import menuItems from "./data.js";
 
 
 let gridcont = document.querySelector("#gridcont")

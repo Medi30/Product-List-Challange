@@ -274,6 +274,7 @@ h1{
     top: 25%;
     left: 25%;
     right: 25%;
+    bottom: 25%;
 }
 
 
@@ -354,7 +355,8 @@ h1{
         margin-right: 50%;
     }
     #orderComplete{
-        width: 50%;
+        width: 100%;
+        left: 0px
     }
     #confirmButton{
         width: 100% !important;
