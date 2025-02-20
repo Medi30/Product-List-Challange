@@ -1,0 +1,368 @@
+
+
+body{
+    background-color: hsl(13, 31%, 94%);
+    font-family: "redHat";
+}
+
+h1{
+    margin-top: 50px;
+    margin-left: 60px;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'redHat';
+    src: url(assets/fonts/RedHatText-VariableFont_wght.ttf);
+}
+
+#maincont{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+#gridcont{
+    display: grid;
+    grid-template-rows:  repeat(auto-fill,1fr);
+    grid-template-columns: repeat(3,minmax(230px,280px));
+    gap: 30px;
+    justify-items: center;
+    margin-left: 90px;
+    margin-top: 80px;
+}
+
+.cartcont{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    align-items: left;
+    width: 400px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+.cardIMG{
+    width: 250px;
+    border-radius: 10px;
+}
+
+.cardIMG_selected{
+    border: 2px solid hsl(14, 86%, 42%);
+}
+
+.costum-btn{
+    width: 160px;
+    height: 40px;
+    position: relative;
+    top: -20px;
+    left: 45px;
+    border-color: hsl(12, 20%, 44%);
+    background-color: aliceblue;
+    color: black;
+    font-weight: 500;
+    border-radius: 25px;
+}
+
+.confirmbtn{
+    width: 360px !important;
+    height: 40px;
+    border-color: black;
+    background-color: hsl(14, 86%, 42%);
+    color: white;
+    border-radius: 25px;
+}
+
+  .btn.btn-primary:active,
+  .btn.btn-primary:hover
+  {
+    border-color: hsl(14, 86%, 42%);
+    background-color: aliceblue;
+    color: hsl(14, 86%, 42%);
+}
+
+.btn.onBtnPressed:hover{
+    color: aliceblue;
+}
+
+.onBtnPressed{
+    background-color:hsl(14, 86%, 42%) !important; 
+}
+
+.plusminusicon{
+    margin-top: 2px;
+    border-radius: 50%;
+    border: 2px solid hsl(7, 20%, 60%);
+    width: 20px;
+    height:20px;
+    padding: 2px;
+}
+.plusicon_h{
+    background-color: aliceblue;
+}
+
+
+.cardbtn2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.cardCategory{
+    color: hsl(12, 20%, 44%);
+    margin-bottom: 0px;
+}
+.cardItemName{
+    color: hsl(14, 65%, 9%);
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+.cardPrice{
+    color: hsl(14, 86%, 42%);
+    font-weight: 600;
+}
+
+
+
+
+
+@media (min-width: 1200px){
+#gridcont{
+    grid-template-columns: repeat(3,minmax(230px,280px));
+}
+}
+@media (min-width: 950px) and (max-width:1200px){
+    #gridcont{
+
+        grid-template-columns: repeat(2,minmax(230px,280px));
+    }
+}
+@media (min-width: 700px) and (max-width:950px){
+    #gridcont{
+        grid-template-columns: repeat(1,minmax(230px,280px));
+    }
+}
+
+
+
+
+.grindcontMobile{
+    row-gap: 0px !important;
+}
+
+#cartcontEmpty{
+    height: 250px;
+}
+#cartcontFilled{
+    padding: 20px;
+}
+
+.yourcartHeader{
+    font-size: 25px;
+    font-weight: 700;
+    color: hsl(14, 86%, 42%);
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.itemName{
+    color: hsl(12, 20%, 44%);
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.itemAmount{
+    color: hsl(14, 86%, 42%);
+    font-size: 20px;
+    font-weight: 500;
+}
+.itemX{
+    color: hsl(14, 86%, 42%);
+    font-size: 15px;
+    font-weight: 500;
+}
+.itemPrice{
+    color: hsl(12, 20%, 44%);
+    font-size: 20px;
+    font-weight: 300;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.dollarSign{
+    color: hsl(12, 20%, 44%);
+    font-size: 20px;
+    font-weight: 600;
+}
+.itemSUM{
+    color: hsl(12, 20%, 44%);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.removeIcon{
+    float: right;
+    border-radius: 50%;
+    border-width: 0.5px;
+    border: 2px solid hsl(7, 20%, 60%);
+    height: 25px;
+    width: auto;
+    margin-right: 10px;
+    padding: 2px;
+    cursor: pointer;
+    filter: brightness(0.9);
+}
+.removeIcon_h{
+    filter: brightness(0.4);
+}
+
+.orderTotal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+#confirmButton{
+    width: 200px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.centered{
+    text-align: center;
+}
+
+.brown-color{
+    color: hsl(12, 20%, 44%);
+}
+
+.dark-brown{
+    color: hsl(14, 65%, 9%)
+}
+
+.light-brown{
+    color:hsl(7, 20%, 60%)
+}
+
+.hide{
+    display: none !important
+}
+
+#orderComplete{
+    position: fixed;
+    background-color: white;
+    height: fit-content;
+    width: fit-content;
+    padding: 30px;
+    border-radius: 20px;
+    top: 25%;
+    left: 25%;
+    right: 25%;
+}
+
+
+
+#totalOrderSumConf{
+    float: right;
+    position: relative;
+    bottom: 30px;
+}
+
+.orderHeader{
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 0px;
+}
+
+.confirmeditem{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+#confCont{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 20px;
+
+}
+
+#container{
+    margin-left: 15px;
+}
+.confThumb{
+    border-radius: 10px;
+    width: 70px;
+    height: 70px;
+}
+.confAmount{
+    color: hsl(14, 86%, 42%);
+    font-size: 15px;
+    font-weight: 500;
+}
+.confPrice{
+    color: hsl(12, 20%, 44%);
+    font-size: 15px;
+    font-weight: 400;
+}
+.conftotalPrice{
+    position: relative;
+    left: 240px;
+    bottom: 23px;
+    font-weight: 600;
+}
+
+.textOrderTotal{
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+.orderHText{
+    font-size: 15px;
+    font-weight: 200;
+}
+
+
+@media (max-width: 700px){
+    #maincont{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    #gridcont{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 50%;
+        margin-right: 50%;
+    }
+    #orderComplete{
+        width: 50%;
+    }
+    #confirmButton{
+        width: 100% !important;
+    }
+    .conftotalPrice{
+        left: 130px;
+    }
+    .confirmbtn{
+        width: 100% !important;
+    }
+}
