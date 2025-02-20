@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Product list with cart</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <h1>Desserts</h1>
+<div id="maincont">
+<!--Empty Cart-->
+  <div id="cartcontEmpty" class="cartcont">
+    <p class="yourcartHeader">Your Cart (0)</p>
+    <img src="assets/images/illustration-empty-cart.svg" width="150px" style="position: relative; left: 30%;">
+    <p class="centered light-brown bold">Your added items will appear here</p>
+  </div>
+  <!--Cart with item-->
+  <div id="cartcontFilled" class="cartcont hide">
+    <p id="yourcartHeader" class="yourcartHeader">Your Cart (<!-- Quantity -->)</p>
+      <div class="orderTotal">
+        <p class="dark-brown">Order Total</p>
+        <span style="font-weight: 700; font-size: 25px;" id="totalOrderSum">$48</span>
+      </div>
+    <p class="centered brown-color"><img src="assets/images/icon-carbon-neutral.svg"> is a <span class="dark-brown bold">carbon-netural</span> delivery</p>
+    <button id="confirmButton" class="btn confirmbtn btn-primary">Confirm Order</button>
+    </div>
+
+
+
+
+  <div id="gridcont" class="gridContainer">
+<!---
+
+    <div class="item">
+      <p class="itemName">Classic Tiramius</p>
+      <img class="removeIcon" src="/assets/images/icon-remove-item.svg">
+      <p class="itemPrice"><span class="itemAmount">x</span> <span class="itemPrice">@($x.xx)</span> <span class="itemSUM">$SUM</span></p>
+      <hr>
+    </div>
+
+
+    <div class="carda">
+      <img class="cardIMG" src="assets/images/image-baklava-desktop.jpg">
+      <button class="btn costum-btn btn-primary"><img src="/assets/images/icon-add-to-cart.svg">   Add to Cart</button>
+      <p class="cardCategory">Category</p>
+      <p class="cardItemName">Name of the item</p>
+      <p class="cardPrice">$6.50</p>
+    </div>
+    <div class="carda">
+      <img class="cardIMG" src="assets/images/image-baklava-desktop.jpg">
+      <button class="btn btn-primary"><img src="/assets/images/icon-add-to-cart.svg">   Add to Cart</button>
+      <p class="cardCategory">Category</p>
+      <p class="cardItemName">Name of the item</p>
+      <p class="cardPrice">$6.50</p>
+    </div>
+  -->
+  </div>
+</div>
+
+<div id="orderComplete" class="hide">
+  <img src="./assets/images/icon-order-confirmed.svg">
+  <p class="orderHeader">Order Confirmed</p>
+  <p class="orderHText">We hope you enjoy your food!</p>
+
+<!--
+   <div class="confirmeditem">
+    <img class="confThumb" src="assets/images/image-cake-thumbnail.jpg">
+    <div id="container">
+     <span class="confitemName">Classic Tiramius</span>
+      <div id="confCont">
+        <span class="confAmount">1</span>
+        <span class="confPrice">7.00</span>
+      </div>
+      <span class="conftotalPrice">15</span>
+     </div>
+    </div>
+  -->
+
+    <div id="confirmedOrderTotal" class="">
+      <p class="textOrderTotal">Order Total</p>
+      <span style="font-weight: 700; font-size: 25px;" id="totalOrderSumConf">$48</span>
+     </div>
+   <button id="startNew" class="btn confirmbtn btn-primary">Start New Order</button>
+   </div>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Larion Horecki</a>.
+  </div>
+
+  <script type="module" src="index.js"></script>
+</body>
+</html>
