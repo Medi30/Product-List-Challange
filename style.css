@@ -271,17 +271,17 @@ h1{
 }
 
 #orderComplete{
-    position: fixed;
+    position: absolute;
     background-color: white;
     height: fit-content;
     width: fit-content;
     padding: 30px;
     border-radius: 20px;
-    top: 25%;
-    left: 25%;
+    top: 20%;
+    left: 35%;
     right: 25%;
-    bottom: 25%;
-    z-index: 1001;
+    bottom: 20%;
+
 }
 
 

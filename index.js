@@ -57,20 +57,45 @@ function parsing (){
         cardButton2Div.appendChild(plusIcon)
         plusIcon.classList.add("plusminusicon")
         minusIcon.classList.add("plusminusicon")
-
+//Mouse button highlight
         plusIcon.addEventListener("mouseenter", function(event){
             plusIcon.classList.add("plusicon_h")
         })
         plusIcon.addEventListener("mouseleave", function(event){
             plusIcon.classList.remove("plusicon_h")
         })
-
         minusIcon.addEventListener("mouseenter", function(event){
             minusIcon.classList.add("plusicon_h")
         })
         minusIcon.addEventListener("mouseleave", function(event){
             minusIcon.classList.remove("plusicon_h")
         })
+
+//Touchscreen button highlight
+        plusIcon.addEventListener("touchstart", function(event) {
+            plusIcon.classList.add("plusicon_h");
+        });
+        plusIcon.addEventListener("touchend", function(event) {
+            plusIcon.classList.remove("plusicon_h");
+        });
+        minusIcon.addEventListener("touchstart", function(event) {
+            minusIcon.classList.add("plusicon_h");
+        });
+        minusIcon.addEventListener("touchend", function(event) {
+            minusIcon.classList.remove("plusicon_h");
+        });
+        plusIcon.addEventListener("touchcancel", function(event) {
+            plusIcon.classList.remove("plusicon_h");
+        });
+        minusIcon.addEventListener("touchcancel", function(event) {
+            minusIcon.classList.remove("plusicon_h");
+        });
+        plusIcon.addEventListener("touchmove", function(event) {
+            plusIcon.classList.remove("plusicon_h");
+        });
+        minusIcon.addEventListener("touchmove", function(event) {
+            minusIcon.classList.remove("plusicon_h");
+        });
 
 /* rest of the card */
         var cardCateg = document.createElement("p")
@@ -209,6 +234,9 @@ function itemAdd(item,btn1,btn2,price,img){
         itemRemoveIcon.addEventListener("touchend", function(event) {
             itemRemoveIcon.classList.remove("removeIcon_h");
         });
+        itemRemoveIcon.addEventListener("touchcancel", function(event) {
+            itemRemoveIcon.classList.remove("removeIcon_h");
+        });
 
         itemRemoveIcon.boundClickHandler = removeItem.bind(null,item,btn1,btn2,img)
         itemRemoveIcon.addEventListener("click",  itemRemoveIcon.boundClickHandler)
@@ -256,6 +284,7 @@ function itemAdd(item,btn1,btn2,price,img){
 
 function orderDone(){
     orderPanel.classList.remove("hide")
+    orderPanel.scrollIntoView({behavior: "smooth", block: "end"})
     gridcont.classList.add("pointer_off")
     cartFilled.classList.add("pointer_off")
      let totalSum = document.querySelector("#totalOrderSumConf")
