@@ -131,7 +131,7 @@ function itemDecrease(item,btn1,btn2,price,img){
         itemSUM.textContent =  (Number(itemSUM.textContent) - price).toFixed(2)
         totalOrder = totalOrder - price
         totalText.textContent = "$ " + totalOrder.toFixed(2)
-        
+//Reset button when item is 0
     }else{
         img.classList.remove("cardIMG_selected")
         btn1.classList.remove("hide")
@@ -152,16 +152,19 @@ function removeItem(item,btn1,btn2,img){
     img.classList.remove("cardIMG_selected")
     btn1.classList.remove("hide")
     btn2.classList.add("hide")
+
     allItems = allItems - btn2.childNodes[0].childNodes[1].textContent
     cartHeader.textContent = "Your Cart (" + allItems + ")"
     btn2.childNodes[0].childNodes[1].textContent = 0
     let itemDiv = shoppingCart[item.name][2].itemDiv
     let itemSUM = itemDiv.querySelector(".itemSUM").textContent
+
     totalOrder = totalOrder - itemSUM
-    console.log(totalOrder)
     totalText.textContent = "$" + totalOrder.toFixed(2)
+
     itemDiv.remove()
     delete shoppingCart[item.name]
+//If No more item in cart
     if (Object.keys(shoppingCart).length === 0){
         document.querySelector("#cartcontEmpty").classList.remove("hide")
         document.querySelector("#cartcontFilled").classList.add("hide")
@@ -199,9 +202,18 @@ function itemAdd(item,btn1,btn2,price,img){
         itemRemoveIcon.addEventListener("mouseleave", function(event){
             itemRemoveIcon.classList.remove("removeIcon_h")
         })
-        itemRemoveIcon.addEventListener("click", function(event){
-            removeItem(item,btn1,btn2,img)
-        })
+        itemRemoveIcon.addEventListener("touchstart", function(event) {
+            itemRemoveIcon.classList.add("removeIcon_h");
+        });
+        
+        itemRemoveIcon.addEventListener("touchend", function(event) {
+            itemRemoveIcon.classList.remove("removeIcon_h");
+        });
+
+        itemRemoveIcon.boundClickHandler = removeItem.bind(null,item,btn1,btn2,img)
+        itemRemoveIcon.addEventListener("click",  itemRemoveIcon.boundClickHandler)
+
+     
 
 
         let itemAmount = document.createElement("span");
@@ -244,12 +256,16 @@ function itemAdd(item,btn1,btn2,price,img){
 
 function orderDone(){
     orderPanel.classList.remove("hide")
-    confirmOrder.disabled = true
+    gridcont.classList.add("pointer_off")
+    cartFilled.classList.add("pointer_off")
      let totalSum = document.querySelector("#totalOrderSumConf")
      let secondP = document.querySelector(".orderHText")
      totalSum.textContent = "$ " + totalOrder.toFixed(2)
      
     for (let key in shoppingCart){
+    //Disable Remove Button
+        let removeIcon = shoppingCart[key][2].itemDiv.childNodes[1]
+        removeIcon.removeEventListener("click", removeIcon.boundClickHandler)
     // Create main div
        const confirmedItem = document.createElement('div');
        confirmedItem.classList.add('confirmeditem');
@@ -261,7 +277,6 @@ function orderDone(){
        confirmedItem.appendChild(img)
 
        for (let key2 in menuItems){
-        console.log(menuItems[key2].name)
         if (menuItems[key2].name === shoppingCart[key][0].name){
             let imgSrc = menuItems[key2].image.thumbnail
             img.src = imgSrc;
@@ -298,11 +313,9 @@ function orderDone(){
        totalPriceSpan.classList.add('conftotalPrice');
        totalPriceSpan.textContent = " $" + shoppingCart[key][3].itemPrice.toFixed(2);
 
-
-
+       //Append
        container.append(nameSpan, confCont, totalPriceSpan);
        confCont.append(amountSpan, priceSpan);
-       console.log(totalOrder)
 
     }
 }
