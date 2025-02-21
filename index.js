@@ -57,6 +57,10 @@ function parsing (){
         cardButton2Div.appendChild(plusIcon)
         plusIcon.classList.add("plusminusicon")
         minusIcon.classList.add("plusminusicon")
+
+        const isTouchDevice ="ontouchstart" in window || navigator.maxTouchPoints > 0
+
+        if (!isTouchDevice){
 //Mouse button highlight
         plusIcon.addEventListener("mouseenter", function(event){
             plusIcon.classList.add("plusicon_h")
@@ -70,7 +74,7 @@ function parsing (){
         minusIcon.addEventListener("mouseleave", function(event){
             minusIcon.classList.remove("plusicon_h")
         })
-
+    }else{
 //Touchscreen button highlight
         plusIcon.addEventListener("touchstart", function(event) {
             plusIcon.classList.add("plusicon_h");
@@ -96,7 +100,7 @@ function parsing (){
         minusIcon.addEventListener("touchmove", function(event) {
             minusIcon.classList.remove("plusicon_h");
         });
-
+    }
 /* rest of the card */
         var cardCateg = document.createElement("p")
         cardDiv.appendChild(cardCateg).classList.add("cardCategory")
