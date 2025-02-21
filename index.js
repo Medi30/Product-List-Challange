@@ -58,9 +58,14 @@ function parsing (){
         plusIcon.classList.add("plusminusicon")
         minusIcon.classList.add("plusminusicon")
 
-        const isTouchDevice ="ontouchstart" in window || navigator.maxTouchPoints > 0
-
-        if (!isTouchDevice){
+        const isTouchDevice = () => {
+            return (  
+                'ontouchstart' in window && navigator.maxTouchPoints > 0 && navigator.userAgent.toLowerCase().indexOf('firefox') === -1
+            );
+        };
+        
+        console.log(isTouchDevice());
+        if (!isTouchDevice()){
 //Mouse button highlight
         plusIcon.addEventListener("mouseenter", function(event){
             plusIcon.classList.add("plusicon_h")
